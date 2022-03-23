@@ -1,5 +1,6 @@
-import requests
 from math import sin, cos, sqrt, atan2, radians
+
+import requests
 
 
 def get_coordinates(city):
@@ -50,3 +51,12 @@ def get_distance(p1, p2):
     distance = R * c
 
     return distance
+
+
+def get_geo_info(city_name, type_info):
+    COUNTRY = "country"
+    COORDINATES = "coordinates"
+    if type_info == COUNTRY:
+        return get_country(city_name)
+    elif type_info == COORDINATES:
+        return get_country(city_name)
