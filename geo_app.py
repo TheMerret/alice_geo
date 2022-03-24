@@ -48,10 +48,11 @@ def handle_dialog(res, req):
             return
     if sessionStorage[user_id]['first_name'] is None:
         sessionStorage[user_id]['first_name'] = first_name
+    first_name = first_name.capitalize()
     if sessionStorage[user_id]["new"]:
         res['response']['text'] = \
             f'Привет, {first_name}! Я могу показать город или сказать расстояние между городами!'
-        sessionStorage[user_id].pop("new")
+        sessionStorage[user_id]["new"] = True
         return
     # Получаем города из нашего
     cities = get_cities(req)
