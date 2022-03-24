@@ -52,7 +52,7 @@ def handle_dialog(res, req):
     if sessionStorage[user_id]["new"]:
         res['response']['text'] = \
             f'Привет, {first_name}! Я могу показать город или сказать расстояние между городами!'
-        sessionStorage[user_id]["new"] = True
+        sessionStorage[user_id]["new"] = False
         return
     # Получаем города из нашего
     cities = get_cities(req)
